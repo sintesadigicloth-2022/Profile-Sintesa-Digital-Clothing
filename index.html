@@ -305,47 +305,56 @@
       background: #FF5722;
     }
   </style>
+
+  <script>
+    // Enforce manual scroll restoration and force top position immediately
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
 </head>
 
-<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white overflow-hidden" id="page-body">
 
-  <!-- ==================== STREETWEAR INTRO OVERLAY (AUDIO ACTIVATION EXPERIENCE) ==================== -->
-  <div id="intro-splash" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-2xl transition-all duration-700 cursor-pointer select-none px-4 text-center">
+  <!-- ==================== STREETWEAR INTRO OVERLAY (AUDIO ACTIVATION & MOBILE-SCALED) ==================== -->
+  <div id="intro-splash" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-2xl transition-all duration-700 cursor-pointer select-none px-4 py-6 text-center touch-none">
     
     <!-- Ambient Radial Glow Background -->
-    <div class="absolute w-[500px] h-[500px] bg-brand-orange/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute w-[260px] sm:w-[480px] h-[260px] sm:h-[480px] bg-brand-orange/20 rounded-full blur-[80px] sm:blur-[140px] pointer-events-none"></div>
     <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
 
-    <div class="relative z-10 flex flex-col items-center max-w-lg">
+    <div class="relative z-10 flex flex-col items-center max-w-[320px] sm:max-w-md w-full my-auto px-2">
       
       <!-- Tag Metadata -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGray/80 border border-brand-orange/40 text-brand-orange text-xs font-mono font-bold tracking-widest uppercase mb-6 shadow-glow-orange/20">
-        <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-accentGray/80 border border-brand-orange/40 text-brand-orange text-[9px] sm:text-xs font-mono font-bold tracking-widest uppercase mb-2.5 sm:mb-4 shadow-glow-orange/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-ping"></span>
         <span>EST. 2022</span>
       </div>
 
-      <!-- Glowing Official Transparent Logo -->
-      <img src="assets/images/logo-sintesa-white.png" alt="Sintesa Digital Printing & Clothing" class="h-16 sm:h-20 w-auto object-contain mb-6 drop-shadow-[0_0_25px_rgba(255,87,34,0.4)] hover:scale-105 transition-transform duration-300">
+      <!-- Glowing Official Transparent Logo (Diperkecil Proporsional untuk Mobile) -->
+      <img src="assets/images/logo-sintesa-white.png" alt="Sintesa Digital Printing & Clothing" 
+           class="h-8 sm:h-11 md:h-14 w-auto object-contain mb-2.5 sm:mb-4 drop-shadow-[0_0_20px_rgba(255,87,34,0.4)] hover:scale-105 transition-transform duration-300">
 
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white font-street mb-2">
+      <h2 class="text-lg sm:text-2xl md:text-3xl font-black uppercase tracking-tight text-white font-street mb-1 sm:mb-1.5 leading-tight">
         Wujudkan <span class="text-brand-orange">Ide Visualmu</span>
       </h2>
-      <p class="text-xs sm:text-sm text-zinc-400 font-mono tracking-wider uppercase mb-8">
+      <p class="text-[9px] sm:text-xs text-zinc-400 font-mono tracking-wider uppercase mb-4 sm:mb-6 leading-relaxed max-w-[270px] sm:max-w-none">
         Produksi Digital Printing & Clothing Berstandar Industri
       </p>
 
-      <!-- Main Action Button / Tap Prompt -->
-      <div class="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-2xl bg-brand-orange hover:bg-brand-neon text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-glow-orange hover:shadow-street-hover transition-all duration-300 animate-pulse">
-        <span class="relative z-10 flex items-center gap-3">
-          <i class="fa-solid fa-volume-high text-lg"></i>
-          <span>KLIK DI MANA SAJA UNTUK MASUK</span>
-          <i class="fa-solid fa-arrow-right text-xs"></i>
+      <!-- Main Action Button / Tap & Swipe Prompt -->
+      <div id="intro-enter-btn" class="group relative inline-flex items-center justify-center px-5 sm:px-8 py-2.5 sm:py-3.5 overflow-hidden rounded-xl sm:rounded-2xl bg-brand-orange hover:bg-brand-neon text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-glow-orange hover:shadow-street-hover transition-all duration-300 animate-pulse active:scale-95 cursor-pointer">
+        <span class="relative z-10 flex items-center gap-2">
+          <i class="fa-solid fa-volume-high text-xs sm:text-base"></i>
+          <span>KLIK ATAU GESER UNTUK MASUK</span>
+          <i class="fa-solid fa-arrows-up-down-left-right text-[10px] opacity-80"></i>
         </span>
       </div>
 
-      <p class="mt-5 text-xs text-zinc-400 font-mono flex items-center gap-2">
-        <i class="fa-solid fa-music text-brand-orange"></i>
-        <span>Memutar Jingle Resmi Sintesa</span>
+      <p class="mt-2.5 sm:mt-4 text-[9px] sm:text-xs text-zinc-400 font-mono flex items-center gap-1.5">
+        <i class="fa-solid fa-music text-brand-orange text-[9px]"></i>
+        <span>Putar Jingle Resmi Sintesa</span>
       </p>
 
     </div>
@@ -1731,6 +1740,20 @@
 
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
+    // 0. Manual Scroll Restoration & Lock Initial Scroll at Top (0, 0)
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    window.addEventListener('load', () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
     // 1. Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1881,7 +1904,7 @@ Pesan: ${pesan}`;
     }
 
     // 5. Audio Player Logic (Sintesa Official Anthem / Jingle)
-    // Putar otomatis langsung saat web dibuka, 1 kali saja (tidak looping/mengulang)
+    // Putar otomatis saat masuk (klik atau geser), 1 kali saja tanpa loop
     const audio = document.getElementById('sintesa-audio');
     const audioBtn = document.getElementById('audio-toggle-btn');
     const audioIcon = document.getElementById('audio-btn-icon');
@@ -1915,6 +1938,7 @@ Pesan: ${pesan}`;
     }
 
     const introSplash = document.getElementById('intro-splash');
+    let hasEntered = false;
 
     function dismissSplash() {
       if (!introSplash) return;
@@ -1923,24 +1947,59 @@ Pesan: ${pesan}`;
         if (introSplash && introSplash.parentNode) {
           introSplash.parentNode.removeChild(introSplash);
         }
-      }, 800);
+      }, 700);
     }
 
-    function enterAndPlayAudio() {
-      if (!audio) {
-        dismissSplash();
-        return;
+    function enterAndPlayAudio(e) {
+      if (hasEntered) return;
+      hasEntered = true;
+
+      if (e) {
+        if (e.cancelable && e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
       }
-      audio.muted = false;
-      audio.currentTime = 0;
-      const p = audio.play();
-      if (p !== undefined) {
-        p.then(() => {
-          audioStarted = true;
-          updateAudioUI(true);
-        }).catch(() => {});
+
+      // Kunci posisi strictly di paling atas halaman (0, 0) agar tidak menggulir ke bawah
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      // Hapus lock overflow agar pengguna leluasa scroll setelah masuk
+      document.body.classList.remove('overflow-hidden');
+
+      // Putar musik jingle Sintesa
+      if (audio) {
+        audio.muted = false;
+        audio.currentTime = 0;
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            audioStarted = true;
+            updateAudioUI(true);
+          }).catch((err) => {
+            console.warn('Audio play request:', err);
+          });
+        }
       }
+
       dismissSplash();
+
+      // Pastikan posisi tetap di paling atas (0, 0) setelah splash ditutup
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      });
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 50);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      }, 200);
     }
 
     function toggleAudio() {
@@ -1957,10 +2016,45 @@ Pesan: ${pesan}`;
       }
     }
 
-    // Layar intro "Klik Di Mana Saja" tetap tampil stabil hingga pengguna mengklik untuk masuk
+    // Deteksi masuk via KLIK atau GESER (SWIPE)
     if (introSplash) {
-      introSplash.addEventListener('click', enterAndPlayAudio);
-      introSplash.addEventListener('touchstart', enterAndPlayAudio, { passive: true });
+      // 1. Klik Mouse biasa (Desktop)
+      introSplash.addEventListener('click', (e) => {
+        enterAndPlayAudio(e);
+      });
+
+      // 2. Deteksi Gestur Geser (Swipe) & Tap untuk Mobile
+      let touchStartX = 0;
+      let touchStartY = 0;
+
+      introSplash.addEventListener('touchstart', (e) => {
+        if (hasEntered) return;
+        if (e.touches && e.touches.length > 0) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+
+      introSplash.addEventListener('touchmove', (e) => {
+        if (hasEntered) return;
+        if (!e.touches || e.touches.length === 0) return;
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const diffX = Math.abs(currentX - touchStartX);
+        const diffY = Math.abs(currentY - touchStartY);
+
+        // Jika terdeteksi geser lebih dari 12px ke arah mana saja (atas/bawah/kiri/kanan)
+        if (diffX > 12 || diffY > 12) {
+          if (e.cancelable) e.preventDefault();
+          enterAndPlayAudio(e);
+        }
+      }, { passive: false });
+
+      introSplash.addEventListener('touchend', (e) => {
+        if (hasEntered) return;
+        // Jika tap layar tanpa geser di mobile
+        enterAndPlayAudio(e);
+      }, { passive: false });
     }
 
     if (audioBtn) audioBtn.addEventListener('click', toggleAudio);
