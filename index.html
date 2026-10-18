@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sintesa Digital Printing & Clothing | Wujudkan Ide Visualmu Menjadi Mahakarya</title>
+  <meta name="description" content="Sintesa Digital Clothing & Printing - Solusi cetak berkualitas untuk segala kebutuhan promosi, dekorasi, dan apparel Anda. Sticker vinyl, duratrans, banner, UV akrilik, DTF, dan jersey custom.">
+  
+  <!-- Google Fonts: Montserrat & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF5722',
+              neon: '#FF6B00',
+              hover: '#E64A19',
+              dark: '#0A0B0E',
+              cardDark: '#12141A',
+              cardBorder: '#232733',
+              accentGray: '#1C1F28',
+              muted: '#8E95A5',
+              white: '#FFFFFF',
+              lightBg: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'Plus Jakarta Sans', 'sans-serif'],
+            street: ['Montserrat', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-orange': '0 0 25px -5px rgba(255, 87, 34, 0.45)',
+            'glow-card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)',
+            'street-hover': '0 20px 40px -15px rgba(255, 87, 34, 0.25)'
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 5s ease-in-out infinite',
+            'marquee': 'marquee 25s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Streetwear Tech Aesthetic */
+    .bg-grid-pattern {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    }
+    
+    .bg-dots-pattern {
+      background-image: radial-gradient(rgba(255, 87, 34, 0.15) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
+    }
+
+    /* Streetwear Corner Accents */
+    .street-card {
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .street-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid #FF5722;
+      border-left: 2px solid #FF5722;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .street-card::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 14px;
+      height: 14px;
+      border-bottom: 2px solid #FF5722;
+      border-right: 2px solid #FF5722;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .street-card:hover::before,
+    .street-card:hover::after {
+      opacity: 1;
+    }
+
+    /* Custom Streetwear Tech Cursor (Desktop Only) */
+    @media (hover: hover) and (pointer: fine) {
+      body {
+        cursor: default;
+      }
+      a, button, input, textarea, select, .street-card {
+        cursor: pointer;
+      }
+      .cursor-dot {
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #FF5722;
+        border-radius: 50%;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #FF5722, 0 0 20px #FF5722;
+        transition: width 0.18s ease, height 0.18s ease, background-color 0.18s ease;
+      }
+      .cursor-ring {
+        pointer-events: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border: 1.5px solid rgba(255, 87, 34, 0.7);
+        border-radius: 50%;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                    height 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                    border-color 0.2s ease, 
+                    background-color 0.2s ease,
+                    box-shadow 0.2s ease;
+      }
+      /* Crosshairs for sniper/industrial precision feel */
+      .cursor-ring::before,
+      .cursor-ring::after {
+        content: '';
+        position: absolute;
+        background-color: #FF5722;
+      }
+      .cursor-ring::before {
+        top: -5px;
+        left: 50%;
+        width: 1.5px;
+        height: 4px;
+        transform: translateX(-50%);
+      }
+      .cursor-ring::after {
+        left: -5px;
+        top: 50%;
+        width: 4px;
+        height: 1.5px;
+        transform: translateY(-50%);
+      }
+      body.cursor-active .cursor-dot {
+        width: 12px;
+        height: 12px;
+        background-color: #FF6B00;
+        box-shadow: 0 0 15px #FF6B00;
+      }
+      body.cursor-active .cursor-ring {
+        width: 58px;
+        height: 58px;
+        border-color: #FF5722;
+        background-color: rgba(255, 87, 34, 0.12);
+        box-shadow: 0 0 25px rgba(255, 87, 34, 0.45);
+      }
+      body.cursor-clicked .cursor-ring {
+        transform: translate(-50%, -50%) scale(0.75);
+      }
+    }
+
+    /* Keyframes for Moving Visuals */
+    @keyframes scanline {
+      0% {
+        top: 2%;
+        opacity: 0.9;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        top: 96%;
+        opacity: 0.2;
+      }
+    }
+    .animate-scanline {
+      animation: scanline 3.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 22s linear infinite;
+    }
+
+    @keyframes float-slow {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(1.5deg);
+      }
+    }
+    .animate-float-slow {
+      animation: float-slow 4.2s ease-in-out infinite;
+    }
+
+    @keyframes float-reverse {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(8px) rotate(-1.5deg);
+      }
+    }
+    .animate-float-reverse {
+      animation: float-reverse 4.8s ease-in-out infinite;
+    }
+
+    /* Music Equalizer Animation */
+    @keyframes eq-bounce-1 {
+      0%, 100% { height: 4px; }
+      50% { height: 12px; }
+    }
+    @keyframes eq-bounce-2 {
+      0%, 100% { height: 12px; }
+      50% { height: 4px; }
+    }
+    @keyframes eq-bounce-3 {
+      0%, 100% { height: 6px; }
+      50% { height: 14px; }
+    }
+    @keyframes eq-bounce-4 {
+      0%, 100% { height: 14px; }
+      50% { height: 5px; }
+    }
+    .eq-playing span:nth-child(1) { animation: eq-bounce-1 0.7s infinite ease-in-out; }
+    .eq-playing span:nth-child(2) { animation: eq-bounce-2 0.5s infinite ease-in-out; }
+    .eq-playing span:nth-child(3) { animation: eq-bounce-3 0.8s infinite ease-in-out; }
+    .eq-playing span:nth-child(4) { animation: eq-bounce-4 0.6s infinite ease-in-out; }
+
+    /* Diagonal Streetwear Corner Cuts (inspired by Sintesa brand aesthetics) */
+    .street-corner-top-left {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 35px 100%, 0 calc(100% - 35px));
+    }
+    .street-corner-cut {
+      clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+    }
+
+    /* Text Outline Streetwear Style */
+    .text-stroke-street {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
+      color: transparent;
+    }
+    
+    .text-stroke-orange {
+      -webkit-text-stroke: 1px #FF5722;
+      color: transparent;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0B0E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232733;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FF5722;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-dark text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+
+  <!-- ==================== STREETWEAR INTRO OVERLAY (AUDIO ACTIVATION EXPERIENCE) ==================== -->
+  <div id="intro-splash" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-brand-dark/95 backdrop-blur-2xl transition-all duration-700 cursor-pointer select-none px-4 text-center">
+    
+    <!-- Ambient Radial Glow Background -->
+    <div class="absolute w-[500px] h-[500px] bg-brand-orange/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col items-center max-w-lg">
+      
+      <!-- Tag Metadata -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-accentGray/80 border border-brand-orange/40 text-brand-orange text-xs font-mono font-bold tracking-widest uppercase mb-6 shadow-glow-orange/20">
+        <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+        <span>EST. 2022</span>
+      </div>
+
+      <!-- Glowing Official Transparent Logo -->
+      <img src="assets/images/logo-sintesa-white.png" alt="Sintesa Digital Printing & Clothing" class="h-16 sm:h-20 w-auto object-contain mb-6 drop-shadow-[0_0_25px_rgba(255,87,34,0.4)] hover:scale-105 transition-transform duration-300">
+
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight text-white font-street mb-2">
+        Wujudkan <span class="text-brand-orange">Ide Visualmu</span>
+      </h2>
+      <p class="text-xs sm:text-sm text-zinc-400 font-mono tracking-wider uppercase mb-8">
+        Produksi Digital Printing & Clothing Berstandar Industri
+      </p>
+
+      <!-- Main Action Button / Tap Prompt -->
+      <div class="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-2xl bg-brand-orange hover:bg-brand-neon text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-glow-orange hover:shadow-street-hover transition-all duration-300 animate-pulse">
+        <span class="relative z-10 flex items-center gap-3">
+          <i class="fa-solid fa-volume-high text-lg"></i>
+          <span>KLIK DI MANA SAJA UNTUK MASUK</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </span>
+      </div>
+
+      <p class="mt-5 text-xs text-zinc-400 font-mono flex items-center gap-2">
+        <i class="fa-solid fa-music text-brand-orange"></i>
+        <span>Memutar Jingle Resmi Sintesa</span>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- ==================== CUSTOM STREETWEAR TECH CURSOR (DESKTOP) ==================== -->
+  <div id="cursor-dot" class="cursor-dot hidden md:block"></div>
+  <div id="cursor-ring" class="cursor-ring hidden md:block"></div>
+
+  <!-- ==================== STICKY TOP CONTAINER (TICKER + NAVBAR) ==================== -->
+  <!-- Kontainer sticky memastikan pita teks bergerak tetap di atas saat roll dan tidak hilang -->
+  <div class="sticky top-0 z-50 w-full shadow-lg" id="sticky-header-container">
+
+    <!-- TOP BAR STREETWEAR TICKER (Tetap di atas saat roll, tidak hilang) -->
+    <div class="bg-brand-orange text-black font-extrabold text-xs tracking-wider uppercase py-1.5 px-4 overflow-hidden select-none border-b border-orange-600 relative z-50">
+      <div class="flex space-x-12 animate-marquee whitespace-nowrap items-center">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-bolt"></i> SINTESA DIGITAL PRINTING & CLOTHING // SPEED & PRECISION CRAFTSMANSHIP</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-industry"></i> MESIN CETAK BERSTANDAR INDUSTRI</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-shirt"></i> CUSTOM APPAREL & HIGH-GRADE JERSEY</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-fire"></i> STREETWEAR VIBE x COMMERCIAL MEDIA QUALITY</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-bolt"></i> SINTESA DIGITAL PRINTING & CLOTHING // SPEED & PRECISION CRAFTSMANSHIP</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-industry"></i> MESIN CETAK BERSTANDAR INDUSTRI</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-shirt"></i> CUSTOM APPAREL & HIGH-GRADE JERSEY</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-fire"></i> STREETWEAR VIBE x COMMERCIAL MEDIA QUALITY</span>
+      </div>
+    </div>
+
+    <!-- 1. NAVBAR -->
+    <header class="backdrop-blur-xl bg-brand-dark/95 border-b border-zinc-800/80 transition-all duration-300" id="main-navbar">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo Sintesa Tanpa Latar Belakang (Transparan) -->
+          <a href="#" class="group flex items-center focus:outline-none py-1 flex-shrink-0">
+            <!-- Logo PNG Transparan Diperbesar Tanpa Teks Duplikat -->
+            <img src="assets/images/logo-sintesa-white.png" alt="Logo Sintesa Digital Clothing & Printing" class="h-11 sm:h-12 md:h-13 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+          </a>
+
+          <!-- Desktop Navigation Menu (Jarak Setara, Rata Tengah, & Seimbang dengan Logo serta Order Sekarang) -->
+          <nav class="hidden md:flex items-center justify-center flex-1 mx-6 lg:mx-12 gap-8 lg:gap-12 xl:gap-16">
+            <a href="#profil" class="text-sm lg:text-base font-semibold tracking-wider text-zinc-300 hover:text-brand-orange py-2 transition-colors relative group whitespace-nowrap">
+              Profil
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-200"></span>
+            </a>
+            <a href="#layanan" class="text-sm lg:text-base font-semibold tracking-wider text-zinc-300 hover:text-brand-orange py-2 transition-colors relative group whitespace-nowrap">
+              Layanan
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-200"></span>
+            </a>
+            <a href="#tim" class="text-sm lg:text-base font-semibold tracking-wider text-zinc-300 hover:text-brand-orange py-2 transition-colors relative group whitespace-nowrap">
+              Tim
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-200"></span>
+            </a>
+            <a href="#kontak" class="text-sm lg:text-base font-semibold tracking-wider text-zinc-300 hover:text-brand-orange py-2 transition-colors relative group whitespace-nowrap">
+              Kontak
+              <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-200"></span>
+            </a>
+          </nav>
+
+          <!-- CTA Order Sekarang (Desktop) -->
+          <div class="hidden md:flex items-center flex-shrink-0">
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%20Digital%20Printing%20%26%20Clothing%2C%20saya%20ingin%20Order%20Sekarang." target="_blank" rel="noopener noreferrer" 
+               class="relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden text-sm font-bold tracking-wider uppercase rounded-lg group bg-brand-orange text-white shadow-glow-orange hover:bg-brand-neon hover:shadow-street-hover transition-all duration-300 active:scale-95 whitespace-nowrap">
+              <span class="relative z-10 flex items-center gap-2">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+                Order Sekarang
+              </span>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Toggle Button -->
+          <div class="flex md:hidden">
+            <button id="mobile-toggle" type="button" class="p-2.5 rounded-lg text-zinc-400 hover:text-white hover:bg-brand-accentGray focus:outline-none border border-zinc-800" aria-label="Toggle Navigation">
+              <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-brand-cardDark/98 border-b border-zinc-800 px-4 pt-3 pb-6 transition-all duration-300">
+        <div class="space-y-1">
+          <a href="#profil" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-semibold text-zinc-300 hover:text-white hover:bg-brand-accentGray transition-all">
+            <i class="fa-solid fa-id-badge text-brand-orange w-6"></i> Profil
+          </a>
+          <a href="#layanan" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-semibold text-zinc-300 hover:text-white hover:bg-brand-accentGray transition-all">
+            <i class="fa-solid fa-layer-group text-brand-orange w-6"></i> Layanan
+          </a>
+          <a href="#tim" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-semibold text-zinc-300 hover:text-white hover:bg-brand-accentGray transition-all">
+            <i class="fa-solid fa-users text-brand-orange w-6"></i> Tim
+          </a>
+          <a href="#kontak" class="mobile-nav-link block px-4 py-3 rounded-lg text-base font-semibold text-zinc-300 hover:text-white hover:bg-brand-accentGray transition-all">
+            <i class="fa-solid fa-envelope text-brand-orange w-6"></i> Kontak
+          </a>
+        </div>
+        <div class="mt-4 pt-4 border-t border-zinc-800">
+          <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%20Digital%20Printing%20%26%20Clothing%2C%20saya%20ingin%20Order%20Sekarang." target="_blank" rel="noopener noreferrer" 
+             class="w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-bold tracking-wider uppercase rounded-lg bg-brand-orange text-white shadow-glow-orange hover:bg-brand-neon transition-all">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            Order Sekarang
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-8 pb-16 lg:py-24">
+      
+      <!-- Hero Background: Real Sintesa Workshop with High-End Streetwear Gradient Overlays -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+        <img src="assets/images/workshop-hero.jpg" alt="Sintesa Produksi Digital Printing & Clothing" 
+             class="w-full h-full object-cover object-right lg:object-center opacity-30 transform scale-105 transition-transform duration-1000">
+        
+        <!-- Diagonal Streetwear Corner Cuts (matching Sintesa visual identity) -->
+        <div class="hidden sm:block absolute -top-8 -left-8 w-44 h-44 bg-gradient-to-br from-brand-orange via-orange-600 to-transparent opacity-60 rotate-12 blur-sm"></div>
+        <div class="hidden sm:block absolute -bottom-10 -right-10 w-48 h-48 bg-gradient-to-tl from-brand-orange/40 via-zinc-900 to-transparent opacity-70 blur-md"></div>
+        
+        <!-- Gradient Overlays ensuring text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 via-50% to-brand-dark/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-brand-dark/85"></div>
+        <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+      </div>
+
+      <!-- Gradient Radial Glow Backgrounds -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-orange/15 rounded-full blur-[130px] pointer-events-none z-0"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-orange-600/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+      
+      <!-- Subtle Industrial Blueprint Accents -->
+      <div class="hidden lg:block absolute top-12 left-10 text-[10px] tracking-[0.3em] font-mono text-zinc-500 uppercase pointer-events-none select-none z-10">
+        [SYS.PRINT_ENGINE // 2400_DPI_READY]<br>
+        [CALIBRATION: CMYK_RGB_STRICT]<br>
+        [LOC: PRODUCTION_LAB_01]
+      </div>
+      <div class="hidden lg:block absolute top-12 right-10 text-[10px] tracking-[0.3em] font-mono text-zinc-500 text-right uppercase pointer-events-none select-none z-10">
+        [FABRIC_WEIGHT: 180-280_GSM]<br>
+        [UV_CURING: INSTANT_POLYMER]<br>
+        [EST. 2022 // SINTESA_HQ]
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            
+            <!-- Streetwear Badge Tag -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-accentGray/80 border border-brand-orange/40 text-brand-orange text-xs font-bold tracking-wider uppercase mb-6 shadow-sm backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+              <span class="w-2 h-2 rounded-full bg-brand-orange -ml-4"></span>
+              Produksi Digital Printing & Clothing
+            </div>
+
+            <!-- Judul Utama (H1) -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.08] uppercase font-street mb-6">
+              Wujudkan <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-orange-400 to-amber-300">Ide Visualmu</span> Menjadi Mahakarya.
+            </h1>
+
+            <!-- Sub-Judul -->
+            <p class="text-lg sm:text-xl text-zinc-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10">
+              Solusi Cetak Berkualitas untuk Segala Kebutuhan Promosi, Dekorasi dan Apparel Anda.
+            </p>
+
+            <!-- Tombol CTA Ganda -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5">
+              <!-- CTA 1: Konsultasi Sekarang (Warna Oranye solid) -->
+              <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%20Digital%20Printing%2C%20saya%20ingin%20Konsultasi%20Sekarang%20mengenai%20project%20saya." target="_blank" rel="noopener noreferrer"
+                 class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-orange hover:bg-brand-neon text-white font-black text-base uppercase tracking-wider shadow-glow-orange hover:shadow-street-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-3 group">
+                <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                Konsultasi Sekarang
+              </a>
+
+              <!-- CTA 2: Lihat Portofolio (Outline transparan) -->
+              <a href="#layanan"
+                 class="w-full sm:w-auto px-8 py-4 rounded-xl bg-transparent hover:bg-white/5 text-white hover:text-brand-orange font-bold text-base uppercase tracking-wider border-2 border-zinc-700 hover:border-brand-orange hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2 group">
+                <span>Lihat Portofolio</span>
+                <i class="fa-solid fa-arrow-down-long text-sm group-hover:translate-y-1 transition-transform"></i>
+              </a>
+            </div>
+
+            <!-- Stats Bar / Streetwear Credibility Badges -->
+            <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-zinc-800/80 max-w-lg mx-auto lg:mx-0 text-left">
+              <div>
+                <p class="text-2xl sm:text-3xl font-black text-white font-street tracking-tight">100<span class="text-brand-orange">%</span></p>
+                <p class="text-xs uppercase tracking-wider text-zinc-400 font-medium mt-1">Presisi Warna</p>
+              </div>
+              <div class="border-l border-zinc-800 pl-4">
+                <p class="text-2xl sm:text-3xl font-black text-white font-street tracking-tight">HD<span class="text-brand-orange">+</span></p>
+                <p class="text-xs uppercase tracking-wider text-zinc-400 font-medium mt-1">Grade Mesin</p>
+              </div>
+              <div class="border-l border-zinc-800 pl-4">
+                <p class="text-xl sm:text-2xl md:text-3xl font-black text-white font-street tracking-tight uppercase">EVERY<span class="text-brand-orange">DAY</span></p>
+                <p class="text-xs uppercase tracking-wider text-zinc-400 font-medium mt-1">Express Ready</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Visual: Moving Interactive Industrial Showcase -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              
+              <!-- Floating Moving Visual Badge 1 (Top Left) -->
+              <div class="absolute -top-6 -left-4 sm:-left-8 bg-brand-cardDark/95 border border-brand-orange/70 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-glow-orange/30 flex items-center gap-3 animate-float-slow z-20">
+                <div class="w-9 h-9 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center text-lg">
+                  <i class="fa-solid fa-shirt"></i>
+                </div>
+                <div>
+                  <div class="text-xs font-black text-white uppercase font-street">Apparel & DTF</div>
+                  <div class="text-[9px] text-brand-orange font-mono font-bold tracking-wider">HIGH RESOLUTION RASTER</div>
+                </div>
+              </div>
+
+              <!-- Animated Rotating Streetwear Circular Stamp (Top Right) -->
+              <div class="absolute -top-8 -right-6 z-20 w-24 h-24 hidden sm:flex items-center justify-center animate-spin-slow pointer-events-none select-none">
+                <svg viewBox="0 0 100 100" class="w-full h-full fill-brand-orange">
+                  <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
+                  <text font-size="8.8" font-weight="900" letter-spacing="2.2" class="uppercase">
+                    <textPath href="#circlePath">
+                      * SINTESA PRINTING & CLOTHING * EST. 2022 *
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="absolute w-9 h-9 rounded-full bg-brand-dark border-2 border-brand-orange flex items-center justify-center text-brand-orange text-xs shadow-glow-orange">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+              </div>
+
+              <!-- Outer Card Frame with Corner Borders -->
+              <div class="street-card bg-brand-cardDark/95 border border-brand-cardBorder rounded-2xl p-5 sm:p-7 backdrop-blur-md shadow-2xl relative overflow-hidden group">
+                
+                <!-- Background ambient highlight inside card -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-orange/20 rounded-full blur-2xl group-hover:bg-brand-orange/30 transition-all duration-500"></div>
+                
+                <!-- Card Header with Machine Status -->
+                <div class="flex items-center justify-between pb-4 border-b border-zinc-800 text-xs font-mono text-zinc-400">
+                  <span class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    MACHINES: ACTIVE & CALIBRATED
+                  </span>
+                  <span class="text-brand-orange font-bold font-street">SNT-2022</span>
+                </div>
+
+                <!-- Showcase Media Frame with Moving Laser Scanline -->
+                <div class="relative rounded-xl overflow-hidden my-5 border border-zinc-800 group-hover:border-brand-orange/60 transition-colors shadow-lg">
+                  <!-- Real Workshop Image Preview -->
+                  <img src="assets/images/workshop-hero.jpg" alt="Workshop Sintesa Showcase" class="w-full h-48 sm:h-52 object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                  
+                  <!-- Animated Laser Scanline moving up and down -->
+                  <div class="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-orange via-50% to-transparent opacity-90 animate-scanline pointer-events-none shadow-[0_0_20px_#FF5722]"></div>
+                  
+                  <!-- Gradient Vignette on Image -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60"></div>
+
+                  <!-- Overlay Sintesa Logo Tanpa Latar Belakang (Transparan) -->
+                  <div class="absolute top-3 left-3 flex items-center z-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                    <img src="assets/images/logo-sintesa-white.png" alt="Sintesa Logo" class="h-7 w-auto object-contain">
+                  </div>
+
+                  <!-- Live Production Spec Pill -->
+                  <div class="absolute bottom-3 left-3 bg-brand-dark/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-zinc-700/80 text-[11px] font-mono text-zinc-200 flex items-center gap-2 z-10">
+                    <i class="fa-solid fa-sliders text-brand-orange"></i>
+                    <span>UV Flatbed & DTF 2400 DPI</span>
+                  </div>
+                </div>
+
+                <!-- Capabilities Matrix -->
+                <div class="space-y-3 pb-2">
+                  <!-- Item 1 -->
+                  <div class="p-3 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange/50 transition-all flex items-center justify-between group/item">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-brand-orange/30 flex items-center justify-center text-brand-orange group-hover/item:scale-110 transition-transform">
+                        <i class="fa-solid fa-shirt text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-white text-xs tracking-wide">Custom Apparel & Jersey</h4>
+                        <p class="text-[11px] text-zinc-400">Raster dot halus, kain dryfit atletis</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-brand-orange font-bold">PREMIUM</span>
+                  </div>
+
+                  <!-- Item 2 -->
+                  <div class="p-3 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange/50 transition-all flex items-center justify-between group/item">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-lg bg-orange-500/10 border border-brand-orange/30 flex items-center justify-center text-brand-orange group-hover/item:scale-110 transition-transform">
+                        <i class="fa-solid fa-layer-group text-sm"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-white text-xs tracking-wide">Sticker Vinyl & Akrilik UV</h4>
+                        <p class="text-[11px] text-zinc-400">Tahan cuaca outdoor & cetak timbul</p>
+                      </div>
+                    </div>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-bold">INDUSTRIAL</span>
+                  </div>
+                </div>
+
+                <!-- Footer Card Info -->
+                <div class="pt-3 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-400">
+                  <span class="font-mono tracking-widest text-[10px]">#SINTESA_CREATIVE_FORCE</span>
+                  <span class="text-white font-semibold flex items-center gap-1.5 text-xs">
+                    <i class="fa-solid fa-check text-brand-orange"></i> Siap Kirim Seluruh Indonesia
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- Floating Moving Visual Badge 2 (Bottom Right) -->
+              <div class="absolute -bottom-5 -right-3 sm:-right-6 bg-brand-orange text-white px-5 py-2.5 rounded-xl text-xs uppercase tracking-wider shadow-glow-orange flex items-center gap-2.5 border border-orange-400 animate-float-reverse z-20">
+                <i class="fa-solid fa-certificate text-black text-sm"></i>
+                <div>
+                  <div class="font-black text-black font-street leading-tight">Guaranteed Precision</div>
+                  <div class="text-[9px] text-black/80 font-mono font-bold">STANDAR INDUSTRI</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. COMPANY PROFILE (TENTANG SINTESA) ==================== -->
+    <section id="profil" class="py-24 bg-white text-zinc-900 relative overflow-hidden transition-colors duration-300">
+      
+      <!-- Subtle dot grid background for white aesthetic -->
+      <div class="absolute inset-0 bg-dots-pattern opacity-60 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Header Tag -->
+        <div class="flex flex-col items-center text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-brand-orange text-xs font-black tracking-widest uppercase mb-3">
+            <i class="fa-solid fa-bullseye"></i> Company Profile
+          </div>
+          <!-- Tulisan Sintesa Latar Putih: sin oren, yang lainnya hitam -->
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight font-street text-zinc-950">
+            Tentang <span class="text-brand-orange">sin</span><span class="text-black">tesa</span>
+          </h2>
+          <div class="w-20 h-1.5 bg-brand-orange rounded-full mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Visual Industrial Frame (Left) -->
+          <div class="lg:col-span-5">
+            <div class="relative">
+              
+              <!-- Clean High-Contrast Background Block -->
+              <div class="bg-zinc-950 text-white rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="flex justify-between items-center mb-8">
+                  <!-- Logo Sintesa Tanpa Latar Belakang (Transparan Diperbesar) -->
+                  <img src="assets/images/logo-sintesa-white.png" alt="Logo Sintesa Digital Clothing & Printing" class="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-transform duration-300">
+                  <span class="text-xs font-mono tracking-widest uppercase text-brand-orange border border-brand-orange/40 bg-zinc-900/90 px-3.5 py-1 rounded-full font-bold">
+                    EST. 2022
+                  </span>
+                </div>
+
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight font-street mb-4">
+                  Beyond Ordinary <span class="text-brand-orange">Printing</span>
+                </h3>
+                <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                  Kombinasi harmonis antara kepekaan gaya visual masa kini dengan akurasi mekanikal mesin cetak industri.
+                </p>
+
+                <!-- Value Pillars -->
+                <div class="space-y-4 pt-4 border-t border-zinc-800">
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 rounded-full bg-zinc-900 border border-brand-orange/40 flex items-center justify-center text-brand-orange text-xs font-bold">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-zinc-200">Teknologi Produksi Mutakhir</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 rounded-full bg-zinc-900 border border-brand-orange/40 flex items-center justify-center text-brand-orange text-xs font-bold">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-zinc-200">Piksel Desain Tereksekusi Presisi</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-7 h-7 rounded-full bg-zinc-900 border border-brand-orange/40 flex items-center justify-center text-brand-orange text-xs font-bold">
+                      <i class="fa-solid fa-check"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-zinc-200">Mitra Strategis Brand & Apparel</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Offset Badge -->
+              <div class="hidden sm:flex absolute -bottom-6 -right-6 bg-brand-orange text-white p-5 rounded-2xl shadow-xl flex-col items-center justify-center text-center min-w-[150px]">
+                <span class="text-3xl font-black font-street">100%</span>
+                <span class="text-[11px] font-bold tracking-wider uppercase">Dedikasi Mutu</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Description Text Content (Right) -->
+          <div class="lg:col-span-7">
+            <div class="prose prose-lg max-w-none text-zinc-700">
+              
+              <!-- Quote / Key Accent -->
+              <div class="border-l-4 border-brand-orange pl-6 py-2 mb-8 bg-orange-50/60 rounded-r-2xl">
+                <p class="text-xl sm:text-2xl font-black text-zinc-900 tracking-tight font-street leading-snug">
+                  "Bukan sekadar vendor pencetak; kami adalah mitra strategis di balik setiap identitas visual dan apparel kebanggaan Anda."
+                </p>
+              </div>
+
+              <!-- Teks Paragraf Wajib Sesuai Instruksi User -->
+              <p class="text-base sm:text-lg text-zinc-700 leading-relaxed font-normal mb-8 text-justify">
+                <span class="font-bold"><span class="text-brand-orange">Sin</span><span class="text-black">tesa</span></span> Digital Clothing hadir sebagai ruang di mana kreativitas tanpa batas bertemu dengan teknologi produksi mutakhir. Dari sehelai kain jersey berteknologi tinggi hingga media promosi raksasa, kami memastikan setiap piksel desain Anda tereksekusi dengan presisi. Dengan dedikasi tinggi dan mesin cetak berstandar industri, kami bukan sekadar vendor pencetak; kami adalah mitra strategis di balik setiap identitas visual dan apparel kebanggaan Anda.
+              </p>
+
+              <!-- Highlights Grid Cards -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+                
+                <div class="p-5 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-brand-orange hover:shadow-md transition-all group">
+                  <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-sliders"></i>
+                  </div>
+                  <h4 class="font-bold text-zinc-900 text-base mb-1">Standardisasi Industri</h4>
+                  <p class="text-xs text-zinc-600 leading-relaxed">
+                    Pengoperasian mesin indoor, outdoor UV, dan DTF berkalibrasi tinggi untuk saturasi warna konsisten.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-zinc-50 border border-zinc-200/80 hover:border-brand-orange hover:shadow-md transition-all group">
+                  <div class="w-10 h-10 rounded-xl bg-orange-100 text-brand-orange flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                  </div>
+                  <h4 class="font-bold text-zinc-900 text-base mb-1">Kolaboratif & Fleksibel</h4>
+                  <p class="text-xs text-zinc-600 leading-relaxed">
+                    Tim desainer dan operator siap mendampingi kebutuhan kustomisasi dari skala retail hingga partai besar.
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. LAYANAN KAMI (GRID CARDS YANG MODERN) ==================== -->
+    <section id="layanan" class="py-24 bg-brand-dark text-white relative bg-grid-pattern">
+      
+      <!-- Ambient Lighting -->
+      <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-brand-orange/10 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-80 h-80 bg-orange-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Header -->
+        <div class="flex flex-col items-center text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-accentGray border border-brand-orange/30 text-brand-orange text-xs font-black tracking-widest uppercase mb-3">
+            <i class="fa-solid fa-shapes"></i> Catalog & Services
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white font-street">
+            Layanan <span class="text-brand-orange">Kami</span>
+          </h2>
+          <p class="mt-4 text-zinc-400 max-w-2xl text-sm sm:text-base">
+            Produksi cepat berstandar tinggi dengan ragam material pilihan untuk mengoptimalkan impresi bisnis dan gaya Anda.
+          </p>
+          <div class="w-20 h-1.5 bg-brand-orange rounded-full mt-4"></div>
+        </div>
+
+        <!-- Cards Grid (4 Core Services) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          
+          <!-- Card 1: Sticker Vinyl & One Way -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-7 border border-brand-cardBorder hover:border-brand-orange/60 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-street-hover">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-brand-accentGray border border-zinc-800 group-hover:border-brand-orange group-hover:bg-brand-orange text-brand-orange group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300">
+                  <i class="fa-solid fa-tags"></i>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500 font-bold uppercase tracking-wider">#01 / ADHESIVE</span>
+              </div>
+
+              <h3 class="text-xl font-black text-white uppercase tracking-tight font-street mb-3 group-hover:text-brand-orange transition-colors">
+                Sticker Vinyl & One Way
+              </h3>
+
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                Material sticker premium tahan cuaca ekstrem dengan daya rekat kuat. Sangat ideal untuk branding armada kendaraan, kaca kantor (One Way Vision), label kemasan, hingga decal dinding.
+              </p>
+
+              <!-- Feature Bullet Badges -->
+              <div class="space-y-2 pt-4 border-t border-zinc-800/80 mb-6 text-xs text-zinc-300 font-medium">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Vinyl Glossy & Matte Lamination</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>One Way Vision Kaca & Toko</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Die Cut & Kiss Cut Presisi</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20ingin%20pesan%20layanan%20Sticker%20Vinyl%20%26%20One%20Way" target="_blank" rel="noopener noreferrer"
+               class="w-full py-2.5 px-4 rounded-xl bg-brand-accentGray group-hover:bg-brand-orange text-zinc-300 group-hover:text-white text-xs font-bold uppercase tracking-wider text-center transition-all duration-300 flex items-center justify-center gap-2">
+              <span>Konsultasi Produk</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 2: Albatros & Duratrans Film -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-7 border border-brand-cardBorder hover:border-brand-orange/60 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-street-hover">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-brand-accentGray border border-zinc-800 group-hover:border-brand-orange group-hover:bg-brand-orange text-brand-orange group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300">
+                  <i class="fa-solid fa-image"></i>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500 font-bold uppercase tracking-wider">#02 / DISPLAY</span>
+              </div>
+
+              <h3 class="text-xl font-black text-white uppercase tracking-tight font-street mb-3 group-hover:text-brand-orange transition-colors">
+                Albatros & Duratrans Film
+              </h3>
+
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                Kertas sintetis Albatros dengan tekstur halus tanpa kerutan untuk stand display indoor, serta Duratrans Film tembus cahaya khusus neon box dan lightbox dengan kejernihan maksimal.
+              </p>
+
+              <!-- Feature Bullet Badges -->
+              <div class="space-y-2 pt-4 border-t border-zinc-800/80 mb-6 text-xs text-zinc-300 font-medium">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Ultra High Resolution & No-Curl</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Duratrans Backlit Neon Box</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Finishing Doff / Glossy Halus</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20ingin%20pesan%20layanan%20Albatros%20%26%20Duratrans%20Film" target="_blank" rel="noopener noreferrer"
+               class="w-full py-2.5 px-4 rounded-xl bg-brand-accentGray group-hover:bg-brand-orange text-zinc-300 group-hover:text-white text-xs font-bold uppercase tracking-wider text-center transition-all duration-300 flex items-center justify-center gap-2">
+              <span>Konsultasi Produk</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 3: Flexy Banner & Akrilik UV -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-7 border border-brand-cardBorder hover:border-brand-orange/60 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-street-hover">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-brand-accentGray border border-zinc-800 group-hover:border-brand-orange group-hover:bg-brand-orange text-brand-orange group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300">
+                  <i class="fa-solid fa-sun"></i>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500 font-bold uppercase tracking-wider">#03 / SIGNAGE</span>
+              </div>
+
+              <h3 class="text-xl font-black text-white uppercase tracking-tight font-street mb-3 group-hover:text-brand-orange transition-colors">
+                Flexy Banner & Akrilik UV
+              </h3>
+
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                Spanduk Flexy tebal tahan panas dan hujan untuk promosi luar ruang, dipadukan teknologi cetak Flatbed UV langsung ke lembaran akrilik transparan/pekat dengan efek tinta timbul berkelas.
+              </p>
+
+              <!-- Feature Bullet Badges -->
+              <div class="space-y-2 pt-4 border-t border-zinc-800/80 mb-6 text-xs text-zinc-300 font-medium">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Flexy Korea 440gsm & Jerman</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>UV Flatbed Tinta Keras Anti Gores</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Papan Nama, Signage & Plakat</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20ingin%20pesan%20layanan%20Flexy%20Banner%20%26%20Akrilik%20UV" target="_blank" rel="noopener noreferrer"
+               class="w-full py-2.5 px-4 rounded-xl bg-brand-accentGray group-hover:bg-brand-orange text-zinc-300 group-hover:text-white text-xs font-bold uppercase tracking-wider text-center transition-all duration-300 flex items-center justify-center gap-2">
+              <span>Konsultasi Produk</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 4: DTF Raster & Jersey Custom -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-7 border border-brand-cardBorder hover:border-brand-orange/60 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2 hover:shadow-street-hover">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-brand-accentGray border border-zinc-800 group-hover:border-brand-orange group-hover:bg-brand-orange text-brand-orange group-hover:text-white flex items-center justify-center text-2xl transition-all duration-300">
+                  <i class="fa-solid fa-shirt"></i>
+                </div>
+                <span class="text-[11px] font-mono text-zinc-500 font-bold uppercase tracking-wider">#04 / APPAREL</span>
+              </div>
+
+              <h3 class="text-xl font-black text-white uppercase tracking-tight font-street mb-3 group-hover:text-brand-orange transition-colors">
+                DTF Raster & Jersey Custom
+              </h3>
+
+              <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                Spesialis sablon digital transfer film (DTF) dengan raster dot halus yang adem dan tidak kaku di kaos katun, serta produksi jersey custom printing sublimasi pola presisi untuk tim dan komunitas.
+              </p>
+
+              <!-- Feature Bullet Badges -->
+              <div class="space-y-2 pt-4 border-t border-zinc-800/80 mb-6 text-xs text-zinc-300 font-medium">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>DTF Raster Halus & Lentur</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Sublimasi Jersey Full Print</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-orange text-xs"></i>
+                  <span>Kain Dryfit Premium & Katun Combed</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20ingin%20pesan%20layanan%20DTF%20Raster%20%26%20Jersey%20Custom" target="_blank" rel="noopener noreferrer"
+               class="w-full py-2.5 px-4 rounded-xl bg-brand-accentGray group-hover:bg-brand-orange text-zinc-300 group-hover:text-white text-xs font-bold uppercase tracking-wider text-center transition-all duration-300 flex items-center justify-center gap-2">
+              <span>Konsultasi Produk</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Spesifikasi Layanan Tambahan (Material & Produk Spesifik) -->
+        <div class="mt-16 p-7 sm:p-10 rounded-3xl bg-brand-cardDark border border-brand-cardBorder relative overflow-hidden shadow-2xl">
+          <!-- Background decorative glow -->
+          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-400/5 rounded-full blur-2xl pointer-events-none"></div>
+
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 pb-6 border-b border-zinc-800/80">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-accentGray text-brand-orange text-xs font-mono font-bold uppercase tracking-wider mb-2">
+                <i class="fa-solid fa-layer-group"></i> Material & Produk Lengkap
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-street">
+                Spesifikasi <span class="text-brand-orange">Layanan</span>
+              </h3>
+            </div>
+            <p class="text-xs sm:text-sm text-zinc-400 max-w-lg">
+              Solusi cetak dan custom merchandise terlengkap dengan akurasi warna dan bahan berkualitas prima:
+            </p>
+          </div>
+
+          <!-- Grid Badges Spesifikasi Layanan -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+            
+            <!-- 1. Sticker Hologram -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Sticker%20Hologram" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-compact-disc"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Sticker Hologram</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Efek Prisma Pelangi</span>
+              </div>
+            </a>
+
+            <!-- 2. Albatros -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Albatros" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Albatros</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Poster Matte Halus</span>
+              </div>
+            </a>
+
+            <!-- 3. Maxdecal -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Maxdecal" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Maxdecal</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Automotive Grade</span>
+              </div>
+            </a>
+
+            <!-- 4. Sticker Transparant -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Sticker%20Transparant" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-ghost"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Sticker Transparant</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Bening Ultra Clear</span>
+              </div>
+            </a>
+
+            <!-- 5. Sticker Reflektif -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Sticker%20Reflektif" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Sticker Reflektif</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Menyala Kena Sinar</span>
+              </div>
+            </a>
+
+            <!-- 6. Art Paper -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Art%20Paper" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-sheet-plastic"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Art Paper</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Brosur, Flyer, Poster</span>
+              </div>
+            </a>
+
+            <!-- 7. Kertas TIK (Sertifikat) -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Kertas%20TIK%20Sertifikat" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Kertas TIK (Sertifikat)</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Piagam Resmi & Karton</span>
+              </div>
+            </a>
+
+            <!-- 8. Grafir -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Grafir" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Grafir</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Laser Engrave Presisi</span>
+              </div>
+            </a>
+
+            <!-- 9. Yasin -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Buku%20Yasin" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Yasin</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Buku Hard/Soft Cover</span>
+              </div>
+            </a>
+
+            <!-- 10. Tumbler -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Tumbler%20Custom" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-mug-saucer"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Tumbler</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Custom UV & Grafir</span>
+              </div>
+            </a>
+
+            <!-- 11. Banner -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Banner" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-panorama"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Banner</span>
+                <span class="text-[10px] text-zinc-500 font-mono">X-Banner & Roll Up</span>
+              </div>
+            </a>
+
+            <!-- 12. Spanduk -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Spanduk" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-rectangle-ad"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Spanduk</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Flexy Outdoor Tajam</span>
+              </div>
+            </a>
+
+            <!-- 13. Stempel -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20Stempel" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-stamp"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">Stempel</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Flash Otomatis Warna</span>
+              </div>
+            </a>
+
+            <!-- 14. ID Card -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20tertarik%20dengan%20layanan%20ID%20Card" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-accentGray/80 border border-zinc-800/80 hover:border-brand-orange hover:bg-zinc-800/80 transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-orange-500/10 text-brand-orange flex items-center justify-center text-sm group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all flex-shrink-0">
+                <i class="fa-solid fa-id-card"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-bold text-white uppercase tracking-wide group-hover:text-brand-orange transition-colors block truncate">ID Card</span>
+                <span class="text-[10px] text-zinc-500 font-mono">Kartu PVC & Lanyard</span>
+              </div>
+            </a>
+
+            <!-- 15. DLL. -->
+            <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%2C%20saya%20ingin%20konsultasi%20kebutuhan%20cetak%20lainnya" target="_blank" rel="noopener noreferrer"
+               class="p-3.5 rounded-xl bg-brand-orange/15 border border-brand-orange/40 hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-brand-orange text-white flex items-center justify-center text-sm group-hover:scale-110 transition-all flex-shrink-0">
+                <i class="fa-solid fa-ellipsis"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-xs font-black text-brand-orange uppercase tracking-wide group-hover:text-white transition-colors block truncate">DLL.</span>
+                <span class="text-[10px] text-zinc-400 group-hover:text-white/90 font-mono">Custom Requests</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. MEET OUR SQUAD (TIM SINTESA) ==================== -->
+    <section id="tim" class="py-24 bg-brand-accentGray/50 border-t border-b border-zinc-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col items-center text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-dark border border-zinc-800 text-brand-orange text-xs font-black tracking-widest uppercase mb-3">
+            <i class="fa-solid fa-users-gear"></i> Crew & Masterminds
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white font-street">
+            Meet Our <span class="text-brand-orange">Squad</span>
+          </h2>
+          <p class="mt-4 text-zinc-400 max-w-xl text-sm sm:text-base">
+            Para talenta di balik layar yang memastikan setiap rancangan dan lembar produksi tereksekusi tanpa kompromi.
+          </p>
+          <div class="w-20 h-1.5 bg-brand-orange rounded-full mt-4"></div>
+        </div>
+
+        <!-- Squad Grid Area (7 Squad Members) -->
+        <!-- Row 1: 4 Members (Nabila, Aden, Hamdan, Putri) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          
+          <!-- Member 1: Nabila - Admin -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-nabila.png" alt="Nabila - Admin Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                CORE OPS
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Nabila
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Admin
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Manajemen pesanan gesit, penjadwalan antrean, dan layanan konsultasi ramah.
+              </p>
+            </div>
+          </div>
+
+          <!-- Member 2: Aden - Desain 1 -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-aden.png" alt="Aden - Desain 1 Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                CREATIVE
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Aden
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Desain 1
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Eksplorasi visual konsep streetwear, apparel pattern, dan layout kreatif modern.
+              </p>
+            </div>
+          </div>
+
+          <!-- Member 3: Hamdan - Desain 2 -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-hamdan.png" alt="Hamdan - Desain 2 Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                CREATIVE
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Hamdan
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Desain 2
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Spesialisasi vector identity, typography styling, dan visual branding komersial.
+              </p>
+            </div>
+          </div>
+
+          <!-- Member 4: Putri - Desain 3 -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-putri.png" alt="Putri - Desain 3 Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                CREATIVE
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Putri
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Desain 3
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Kustomisasi warna, penyesuaian raster detail, dan mockup merchandise estetis.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: 3 Members Centered (Indra/Bule, Chandra, Risan) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+          <!-- Member 5: Indra / Bule - Operator Mesin Indoor -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-indra.png" alt="Indra / Bule - Operator Mesin Indoor Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                PRODUCTION
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Indra / Bule
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Operator Mesin Indoor
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Pakar cetak Albatros, Duratrans, dan Vinyl Indoor beresolusi super tajam.
+              </p>
+            </div>
+          </div>
+
+          <!-- Member 6: Chandra - Operator Mesin UV -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-chandra.png" alt="Chandra - Operator Mesin UV Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                PRODUCTION
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Chandra
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Operator Mesin UV
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Presisi cetak flatbed akrilik, signage rigid, dan polimerisasi lampu UV instan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Member 7: Risan - Operator Mesin DTF -->
+          <div class="street-card bg-brand-cardDark rounded-2xl p-6 border border-brand-cardBorder hover:border-brand-orange/70 transition-all duration-300 group hover:-translate-y-1.5 hover:shadow-street-hover sm:col-span-2 lg:col-span-1">
+            <div class="relative mb-5 flex justify-center">
+              <div class="w-20 h-20 rounded-2xl bg-zinc-950 border-2 border-zinc-700 group-hover:border-brand-orange flex items-center justify-center shadow-lg group-hover:scale-105 transition-all overflow-hidden">
+                <img src="assets/images/team-risan.png" alt="Risan - Operator Mesin DTF Sintesa" class="w-full h-full object-cover">
+              </div>
+              <span class="absolute -bottom-2 px-2.5 py-0.5 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-mono text-zinc-300 uppercase tracking-wider">
+                PRODUCTION
+              </span>
+            </div>
+            <div class="text-center">
+              <h3 class="text-lg font-black text-white uppercase tracking-tight font-street group-hover:text-brand-orange transition-colors">
+                Risan
+              </h3>
+              <p class="text-brand-orange text-xs font-bold tracking-wider uppercase mt-1">
+                Operator Mesin DTF
+              </p>
+              <p class="text-zinc-500 text-xs mt-3 line-clamp-2">
+                Ahli curing powder, kalibrasi tinta putih, serta teknik heatpress apparel anti rontok.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. KRITIK, SARAN & KONTAK (SPLIT LAYOUT) ==================== -->
+    <section id="kontak" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+      
+      <!-- Ambient Backlight -->
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-brand-orange/10 blur-[150px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- ================= KOLOM KIRI (Informasi Kontak & Sosial Media) ================= -->
+          <div class="lg:col-span-5 flex flex-col justify-between h-full">
+            <div>
+              
+              <!-- Tag -->
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-accentGray border border-brand-orange/30 text-brand-orange text-xs font-black tracking-widest uppercase mb-4">
+                <i class="fa-solid fa-comments"></i> Get In Touch
+              </div>
+
+              <!-- Judul -->
+              <h2 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white font-street mb-4">
+                Hubungi <span class="text-brand-orange">Kami</span>
+              </h2>
+
+              <!-- Teks Deskripsi Wajib -->
+              <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-8">
+                Punya ide gila untuk project selanjutnya? Mari diskusikan bersama kami.
+              </p>
+
+              <!-- Channels Kontak List -->
+              <div class="space-y-4 mb-8">
+                
+                <!-- WhatsApp Prominent Card -->
+                <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%20Digital%20Clothing%2C%20saya%20punya%20ide%20project%20dan%20ingin%20berdiskusi." target="_blank" rel="noopener noreferrer"
+                   class="street-card flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-brand-cardDark to-brand-accentGray border-2 border-brand-orange/80 hover:border-brand-neon hover:shadow-glow-orange transition-all duration-300 group">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-orange text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                      <span class="text-[11px] font-mono tracking-wider uppercase text-zinc-400 font-bold block">WhatsApp Official</span>
+                      <span class="text-lg sm:text-xl font-black text-white tracking-wide font-street group-hover:text-brand-orange transition-colors">
+                        +62821-5758-5960
+                      </span>
+                    </div>
+                  </div>
+                  <span class="px-3 py-1.5 rounded-lg bg-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-wider group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                    Chat Now
+                  </span>
+                </a>
+
+                <!-- Instagram Card -->
+                <a href="https://instagram.com/sintesadigitalclothing_" target="_blank" rel="noopener noreferrer"
+                   class="street-card flex items-center justify-between p-4 rounded-xl bg-brand-cardDark border border-brand-cardBorder hover:border-pink-500/60 transition-all duration-300 group">
+                  <div class="flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-zinc-800 text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                      <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div>
+                      <span class="text-[11px] font-mono tracking-wider uppercase text-zinc-400 font-bold block">Instagram</span>
+                      <span class="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-pink-400 transition-colors">
+                        @sintesadigitalclothing_
+                      </span>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors pr-2"></i>
+                </a>
+
+                <!-- TikTok Card -->
+                <a href="https://tiktok.com/@sintesadigitalclothing" target="_blank" rel="noopener noreferrer"
+                   class="street-card flex items-center justify-between p-4 rounded-xl bg-brand-cardDark border border-brand-cardBorder hover:border-cyan-400/60 transition-all duration-300 group">
+                  <div class="flex items-center gap-4">
+                    <div class="w-11 h-11 rounded-lg bg-zinc-800 text-cyan-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                      <i class="fa-brands fa-tiktok"></i>
+                    </div>
+                    <div>
+                      <span class="text-[11px] font-mono tracking-wider uppercase text-zinc-400 font-bold block">TikTok</span>
+                      <span class="text-sm sm:text-base font-bold text-white tracking-wide group-hover:text-cyan-400 transition-colors">
+                        @sintesadigitalclothing
+                      </span>
+                    </div>
+                  </div>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors pr-2"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+            <!-- Jam Pelayanan Workshop -->
+            <div class="p-5 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 text-xs text-zinc-400">
+              <div class="flex items-center justify-between mb-3 pb-2.5 border-b border-zinc-800/80">
+                <div class="flex items-center gap-2 text-white font-bold text-sm">
+                  <i class="fa-regular fa-clock text-brand-orange"></i>
+                  <span>Waktu Pelayanan Workshop :</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-[11px] font-semibold text-emerald-400">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Responsif via WhatsApp</span>
+                </div>
+              </div>
+              <div class="space-y-1.5 text-zinc-300 font-mono text-xs sm:text-sm">
+                <div class="flex items-center justify-between">
+                  <span class="text-zinc-400 font-sans">Senin - Jumat</span>
+                  <span class="font-bold text-white">: 08.00 - 19.00 WIB</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-zinc-400 font-sans">Sabtu - Minggu</span>
+                  <span class="font-bold text-white">: 08.00 - 18.00 WIB</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ================= KOLOM KANAN (Formulir Kritik & Saran) ================= -->
+          <div class="lg:col-span-7">
+            
+            <div class="street-card bg-brand-cardDark rounded-3xl p-7 sm:p-10 border border-brand-cardBorder shadow-2xl relative">
+              
+              <!-- Form Header -->
+              <div class="mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-accentGray text-brand-orange text-xs font-bold font-mono uppercase tracking-wider mb-2">
+                  <i class="fa-solid fa-feather-pointed"></i> Feedback Loop
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white font-street mb-2">
+                  Kritik & <span class="text-brand-orange">Saran</span>
+                </h3>
+                <p class="text-zinc-400 text-sm">
+                  Masukan Anda adalah bahan bakar kami untuk terus berkembang.
+                </p>
+              </div>
+
+              <!-- Alert Notification Toast (Hidden by default, triggered by JS) -->
+              <div id="form-toast" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-lg text-emerald-400 mt-0.5"></i>
+                <div>
+                  <h4 class="font-bold text-white">Membuka WhatsApp Admin...</h4>
+                  <p class="text-xs text-emerald-200 mt-0.5">Masukan Anda telah diformat dan sedang dialihkan ke WhatsApp Sintesa.</p>
+                </div>
+              </div>
+
+              <!-- Form HTML -->
+              <form id="feedback-form" class="space-y-5" onsubmit="handleFeedbackSubmit(event)">
+                
+                <!-- Input Nama -->
+                <div>
+                  <label for="feedback-nama" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                    Nama Lengkap <span class="text-brand-orange">*</span>
+                  </label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-500">
+                      <i class="fa-regular fa-user"></i>
+                    </div>
+                    <input type="text" id="feedback-nama" name="nama" required
+                           placeholder="Contoh: Budi Santoso"
+                           class="w-full pl-11 pr-4 py-3.5 bg-brand-accentGray border border-zinc-800 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all">
+                  </div>
+                </div>
+
+                <!-- Input Nomor WA / Email -->
+                <div>
+                  <label for="feedback-kontak" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                    Nomor WhatsApp / Email <span class="text-brand-orange">*</span>
+                  </label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-500">
+                      <i class="fa-regular fa-address-book"></i>
+                    </div>
+                    <input type="text" id="feedback-kontak" name="kontak" required
+                           placeholder="Contoh: 0812xxxx atau nama@email.com"
+                           class="w-full pl-11 pr-4 py-3.5 bg-brand-accentGray border border-zinc-800 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all">
+                  </div>
+                </div>
+
+                <!-- Textarea untuk Pesan / Saran -->
+                <div>
+                  <label for="feedback-pesan" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                    Pesan / Saran <span class="text-brand-orange">*</span>
+                  </label>
+                  <div class="relative">
+                    <textarea id="feedback-pesan" name="pesan" rows="5" required
+                              placeholder="Tuliskan pengalaman Anda, ide baru, atau masukan berharga bagi Sintesa..."
+                              class="w-full p-4 bg-brand-accentGray border border-zinc-800 rounded-xl text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all leading-relaxed resize-none"></textarea>
+                  </div>
+                </div>
+
+                <!-- Submit Button: Kirim Masukan (Oranye) -->
+                <div>
+                  <button type="submit" id="submit-btn"
+                          class="w-full py-4 px-6 rounded-xl bg-brand-orange hover:bg-brand-neon text-white font-black text-sm uppercase tracking-widest shadow-glow-orange hover:shadow-street-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <span id="btn-text">Kirim Masukan</span>
+                    <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform text-xs"></i>
+                  </button>
+                </div>
+
+                <p class="text-center text-[11px] text-zinc-500 pt-1">
+                  Kritik konstruktif Anda sangat kami hargai demi menjaga standar kualitas terbaik.
+                </p>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 7. FOOTER ==================== -->
+  <footer class="bg-black text-zinc-400 border-t border-zinc-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-zinc-900">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-5">
+          <div class="mb-5">
+            <!-- Logo Sintesa Tanpa Latar Belakang (Transparan Diperbesar) -->
+            <img src="assets/images/logo-sintesa-white.png" alt="Logo Sintesa Digital Clothing & Printing" class="h-12 sm:h-14 w-auto object-contain">
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm mb-6">
+            Mitra strategis digital printing dan apparel berkelas. Menggabungkan teknologi cetak mutakhir dengan identitas visual streetwear yang otentik dan berdaya saing.
+          </p>
+          <div class="flex items-center space-x-3">
+            <a href="https://wa.me/6282157585960" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-zinc-900 hover:bg-brand-orange hover:text-white flex items-center justify-center text-zinc-400 transition-colors" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+            <a href="https://instagram.com/sintesadigitalclothing_" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-zinc-900 hover:bg-pink-600 hover:text-white flex items-center justify-center text-zinc-400 transition-colors" aria-label="Instagram">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="https://tiktok.com/@sintesadigitalclothing" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-zinc-900 hover:bg-zinc-700 hover:text-white flex items-center justify-center text-zinc-400 transition-colors" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs font-black uppercase tracking-widest text-white font-street mb-4">
+            Navigasi Cepat
+          </h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#profil" class="hover:text-brand-orange transition-colors">Tentang Sintesa</a></li>
+            <li><a href="#layanan" class="hover:text-brand-orange transition-colors">Katalog Layanan Cetak</a></li>
+            <li><a href="#tim" class="hover:text-brand-orange transition-colors">Squad & Operator</a></li>
+            <li><a href="#kontak" class="hover:text-brand-orange transition-colors">Kontak & Form Saran</a></li>
+          </ul>
+        </div>
+
+        <!-- Spesifikasi Layanan -->
+        <div class="lg:col-span-4">
+          <h4 class="text-xs font-black uppercase tracking-widest text-white font-street mb-4">
+            Spesifikasi Layanan
+          </h4>
+          <div class="flex flex-wrap gap-2 text-[11px] font-mono">
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">STICKER HOLOGRAM</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">ALBATROS</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">MAXDECAL</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">STICKER TRANSPARANT</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">STICKER REFLEKTIF</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">ART PAPER</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">KERTAS TIK (SERTIFIKAT)</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">GRAFIR</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">YASIN</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">TUMBLER</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">BANNER</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">SPANDUK</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">STEMPEL</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-brand-orange hover:text-white transition-colors">IDCARD</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 text-brand-orange border border-brand-orange/40 font-bold hover:bg-brand-orange hover:text-white transition-colors">DLL.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar (Exact requested copyright) -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-400 gap-4">
+        <p class="text-center sm:text-left">
+          Copyright © 2026 Sintesa Digital Printing & Clothing. All rights reserved.
+        </p>
+        <a href="#" class="inline-flex items-center gap-1.5 text-zinc-400 hover:text-brand-orange transition-colors">
+          <span>Kembali ke Atas</span>
+          <i class="fa-solid fa-arrow-up text-[10px]"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+  <a href="https://wa.me/6282157585960?text=Halo%20Sintesa%20Digital%20Printing%20%26%20Clothing%2C%20saya%20tertarik%20untuk%20konsultasi%20order." 
+     target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-40 bg-brand-orange hover:bg-brand-neon text-white w-14 h-14 rounded-full flex items-center justify-center shadow-glow-orange hover:scale-110 active:scale-95 transition-all duration-300 group"
+     aria-label="Chat WhatsApp">
+    <i class="fa-brands fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
+    <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-brand-dark rounded-full"></span>
+  </a>
+
+  <!-- ==================== AUDIO ELEMENT (SINTESA JINGLE) ==================== -->
+  <audio id="sintesa-audio" src="assets/audio/sintesa-jingle.mp3" autoplay playsinline preload="auto">
+    <source src="assets/audio/sintesa-jingle.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ==================== FLOATING MUSIC PLAYER (BOTTOM-LEFT) ==================== -->
+  <div id="audio-player-widget" class="fixed bottom-6 left-4 sm:left-6 z-40 flex items-center gap-2.5 p-1.5 sm:p-2 pr-3.5 sm:pr-4 rounded-full bg-brand-cardDark/95 border border-zinc-800 backdrop-blur-md shadow-2xl hover:border-brand-orange/60 transition-all duration-300 group select-none">
+    
+    <!-- Play/Pause Button -->
+    <button id="audio-toggle-btn" type="button" aria-label="Putar atau Jeda Jingle Sintesa"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-brand-orange hover:bg-brand-neon text-white flex items-center justify-center shadow-glow-orange transition-transform active:scale-95 cursor-pointer">
+      <i id="audio-btn-icon" class="fa-solid fa-play text-xs sm:text-sm ml-0.5"></i>
+    </button>
+
+    <!-- Info & Equalizer Bars -->
+    <div class="flex flex-col cursor-pointer" id="audio-info-click">
+      <div class="flex items-center gap-2">
+        <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-white">Sintesa Anthem</span>
+        <!-- Mini Animated Equalizer -->
+        <div id="equalizer-bars" class="flex items-end gap-0.5 h-3 opacity-40">
+          <span class="w-0.5 bg-brand-orange rounded-full h-1"></span>
+          <span class="w-0.5 bg-brand-orange rounded-full h-2.5"></span>
+          <span class="w-0.5 bg-brand-orange rounded-full h-1.5"></span>
+          <span class="w-0.5 bg-brand-orange rounded-full h-3"></span>
+        </div>
+      </div>
+      <span id="audio-status-text" class="text-[9px] sm:text-[10px] text-zinc-400 font-mono">Memutar otomatis...</span>
+    </div>
+
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          hamburgerIcon.classList.remove('fa-xmark');
+          hamburgerIcon.classList.add('fa-bars');
+        } else {
+          hamburgerIcon.classList.remove('fa-bars');
+          hamburgerIcon.classList.add('fa-xmark');
+        }
+      });
+
+      // Close menu when clicking link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('fa-xmark');
+          hamburgerIcon.classList.add('fa-bars');
+        });
+      });
+    }
+
+    // 2. Feedback Form Submission Handler (Direct to WhatsApp)
+    function handleFeedbackSubmit(event) {
+      event.preventDefault();
+      
+      // 1. Ambil nilai dari kolom Input Nama, Input Kontak (WA/Email), dan Textarea Pesan
+      const nama = document.getElementById('feedback-nama').value.trim();
+      const kontak = document.getElementById('feedback-kontak').value.trim();
+      const pesan = document.getElementById('feedback-pesan').value.trim();
+
+      // 2. Rangkai nilai menjadi format pesan yang diminta
+      const templatePesan = 
+`Halo Admin Sintesa, saya ingin memberikan masukan:
+Nama: ${nama}
+Kontak: ${kontak}
+Pesan: ${pesan}`;
+
+      // 3. Gunakan encodeURIComponent agar format teks rapi serta spasi & baris baru terbaca di WhatsApp
+      const pesanTerformat = encodeURIComponent(templatePesan);
+
+      // 4. Arahkan pengguna ke link WhatsApp admin di tab baru
+      window.open('https://wa.me/6282157585960?text=' + pesanTerformat, '_blank');
+
+      // 5. Feedback visual (Toast notifikasi & reset form)
+      const formToast = document.getElementById('form-toast');
+      const form = document.getElementById('feedback-form');
+      if (formToast) {
+        formToast.classList.remove('hidden');
+        formToast.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        setTimeout(() => {
+          formToast.classList.add('hidden');
+        }, 5000);
+      }
+
+      if (form) {
+        form.reset();
+      }
+    }
+
+    // 3. Navbar Scrolled Shadow Effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-navbar');
+      if (window.scrollY > 20) {
+        nav.classList.add('shadow-xl', 'bg-brand-dark/95');
+      } else {
+        nav.classList.remove('shadow-xl');
+      }
+    });
+
+    // 4. Custom Streetwear Tech Cursor Logic
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+
+    if (cursorDot && cursorRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+      let isVisible = false;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        if (!isVisible) {
+          cursorDot.style.opacity = '1';
+          cursorRing.style.opacity = '1';
+          isVisible = true;
+        }
+
+        cursorDot.style.left = `${mouseX}px`;
+        cursorDot.style.top = `${mouseY}px`;
+      });
+
+      // Smooth lag / spring interpolation for ring
+      function renderCursor() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+
+        requestAnimationFrame(renderCursor);
+      }
+      requestAnimationFrame(renderCursor);
+
+      // Interactive hover states on clickable elements
+      const interactiveSelector = 'a, button, input, textarea, select, .street-card, [role="button"], label';
+      
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveSelector)) {
+          document.body.classList.add('cursor-active');
+        }
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveSelector)) {
+          document.body.classList.remove('cursor-active');
+        }
+      });
+
+      // Click pulse
+      window.addEventListener('mousedown', () => {
+        document.body.classList.add('cursor-clicked');
+      });
+      window.addEventListener('mouseup', () => {
+        document.body.classList.remove('cursor-clicked');
+      });
+
+      // Hide cursor when leaving viewport
+      document.addEventListener('mouseleave', () => {
+        cursorDot.style.opacity = '0';
+        cursorRing.style.opacity = '0';
+        isVisible = false;
+      });
+      document.addEventListener('mouseenter', () => {
+        cursorDot.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+        isVisible = true;
+      });
+    }
+
+    // 5. Audio Player Logic (Sintesa Official Anthem / Jingle)
+    // Putar otomatis langsung saat web dibuka, 1 kali saja (tidak looping/mengulang)
+    const audio = document.getElementById('sintesa-audio');
+    const audioBtn = document.getElementById('audio-toggle-btn');
+    const audioIcon = document.getElementById('audio-btn-icon');
+    const audioStatus = document.getElementById('audio-status-text');
+    const eqBars = document.getElementById('equalizer-bars');
+    const audioInfo = document.getElementById('audio-info-click');
+
+    let audioStarted = false;
+
+    function updateAudioUI(isPlaying) {
+      if (!audioIcon || !audioStatus || !eqBars) return;
+      if (isPlaying) {
+        audioIcon.className = 'fa-solid fa-pause text-xs sm:text-sm';
+        audioStatus.textContent = 'Memutar Jingle';
+        audioStatus.classList.add('text-brand-orange');
+        audioStatus.classList.remove('text-zinc-400');
+        eqBars.classList.add('eq-playing');
+        eqBars.classList.remove('opacity-40');
+      } else {
+        audioIcon.className = 'fa-solid fa-play text-xs sm:text-sm ml-0.5';
+        if (audio && audio.ended) {
+          audioStatus.textContent = 'Selesai diputar';
+        } else {
+          audioStatus.textContent = 'Audio Standby';
+        }
+        audioStatus.classList.remove('text-brand-orange');
+        audioStatus.classList.add('text-zinc-400');
+        eqBars.classList.remove('eq-playing');
+        eqBars.classList.add('opacity-40');
+      }
+    }
+
+    const introSplash = document.getElementById('intro-splash');
+
+    function dismissSplash() {
+      if (!introSplash) return;
+      introSplash.classList.add('opacity-0', 'pointer-events-none', 'scale-105');
+      setTimeout(() => {
+        if (introSplash && introSplash.parentNode) {
+          introSplash.parentNode.removeChild(introSplash);
+        }
+      }, 800);
+    }
+
+    function enterAndPlayAudio() {
+      if (!audio) {
+        dismissSplash();
+        return;
+      }
+      audio.muted = false;
+      audio.currentTime = 0;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.then(() => {
+          audioStarted = true;
+          updateAudioUI(true);
+        }).catch(() => {});
+      }
+      dismissSplash();
+    }
+
+    function toggleAudio() {
+      if (!audio) return;
+      if (audio.paused || audio.muted) {
+        audio.muted = false;
+        audio.play().then(() => {
+          audioStarted = true;
+          updateAudioUI(true);
+        }).catch(() => {});
+      } else {
+        audio.pause();
+        updateAudioUI(false);
+      }
+    }
+
+    // Layar intro "Klik Di Mana Saja" tetap tampil stabil hingga pengguna mengklik untuk masuk
+    if (introSplash) {
+      introSplash.addEventListener('click', enterAndPlayAudio);
+      introSplash.addEventListener('touchstart', enterAndPlayAudio, { passive: true });
+    }
+
+    if (audioBtn) audioBtn.addEventListener('click', toggleAudio);
+    if (audioInfo) audioInfo.addEventListener('click', toggleAudio);
+
+    // Audio lifecycle events
+    if (audio) {
+      audio.addEventListener('play', () => {
+        if (!audio.muted) updateAudioUI(true);
+      });
+      audio.addEventListener('pause', () => {
+        if (!audio.ended) updateAudioUI(false);
+      });
+      // Selesai (tanpa loop/mengulang)
+      audio.addEventListener('ended', () => {
+        audio.pause();
+        updateAudioUI(false);
+        if (audioStatus) audioStatus.textContent = 'Selesai diputar';
+      });
+    }
+  </script>
+
+</body>
+</html>
